@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:3000/api',
+  apiUrl: 'https://budget-tracker-backend-hazel.vercel.app',
   appName: 'Budget Tracker',
   version: '1.0.0',
 };
