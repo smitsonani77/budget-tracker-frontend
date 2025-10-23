@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../environments/environment';
+import { omit } from 'lodash';
 
 export interface Transaction {
   _id?: string;
@@ -64,9 +65,8 @@ export class TransactionService {
     return this.http.get<TransactionsResponse>(this.apiUrl, { params });
   }
 
-  addTransaction(
-    transaction: Omit<Transaction, '_id'>
-  ): Observable<Transaction> {
+  addTransaction(transaction: Transaction): Observable<any> {
+    transaction = omit(transaction, '_id');
     return this.http.post<Transaction>(this.apiUrl, transaction);
   }
 
