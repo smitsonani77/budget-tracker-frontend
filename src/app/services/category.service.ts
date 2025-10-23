@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Category } from '../models/Category.modal';
 import { Observable } from 'rxjs';
 import { isEmpty } from 'lodash';
-import { environment } from '../environments/enviornment';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root',

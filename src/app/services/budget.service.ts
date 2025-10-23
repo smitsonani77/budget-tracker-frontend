@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
-import { environment } from '../environments/enviornment';
+import { environment } from '../environments/environment';
 import { Budget, BudgetData, BudgetSummary } from '../models/budget.model';
 
 @Injectable({
