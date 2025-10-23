@@ -3,12 +3,13 @@ import { Injectable } from '@angular/core';
 import { Category } from '../models/Category.modal';
 import { Observable } from 'rxjs';
 import { isEmpty } from 'lodash';
+import { environment } from '../environments/enviornment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CategoryService {
-  private apiUrl = 'http://localhost:3000/api';
+  private apiUrl = `${environment.apiUrl}/api`;
 
   private categories: Category[] = [];
 
