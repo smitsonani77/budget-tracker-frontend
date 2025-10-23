@@ -55,17 +55,12 @@
           <button
             mat-button
             [matMenuTriggerFor]="profileMenu"
-            class="flex items-center space-x-2 text-white hover:text-indigo-100 transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-white hover:bg-opacity-10"
+            class="btn flex items-center space-x-2 text-white"
           >
-            <div
-              class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center"
-            >
-              <mat-icon>person</mat-icon>
-            </div>
-            <span class="font-medium">
+            <mat-icon class="text-white">person</mat-icon>
+            <span class="text-white font-medium">
               {{ (authService.currentUser$ | async)?.username || "User" }}
             </span>
-            <mat-icon>expand_more</mat-icon>
           </button>
 
           <mat-menu #profileMenu="matMenu" class="rounded-lg shadow-lg">

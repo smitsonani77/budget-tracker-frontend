@@ -14,6 +14,7 @@ import { BudgetComponent } from './components/budget/budget.component';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material.module';
+import { SignupComponent } from './components/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { MaterialModule } from './modules/material.module';
     TransactionsComponent,
     BudgetComponent,
     NavbarComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,

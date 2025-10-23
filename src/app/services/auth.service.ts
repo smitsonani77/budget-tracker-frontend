@@ -64,4 +64,16 @@ export class AuthService {
   isAuthenticated(): boolean {
     return !!this.getToken();
   }
+
+  signup(
+    username: string,
+    email: string,
+    password: string
+  ): Observable<AuthResponse> {
+    return this.http.post<AuthResponse>(`${this.apiUrl}/auth/register`, {
+      username,
+      email,
+      password,
+    });
+  }
 }
