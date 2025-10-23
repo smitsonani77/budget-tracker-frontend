@@ -47,3 +47,11 @@ ng serve
 # or
 npm start
 ```
+
+
+🔐 Testing Credentials
+Use these demo accounts to test the application:
+```
+username: test	
+password: test@t123
+```
