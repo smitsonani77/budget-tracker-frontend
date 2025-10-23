@@ -1,0 +1,22 @@
+/* Custom styles specific to dashboard */
+.stats-card {
+  @apply bg-white rounded-xl shadow-sm p-6 transition-all duration-300 hover:shadow-md;
+}
+
+.chart-container {
+  @apply bg-white rounded-xl shadow-sm p-6;
+}
+
+/* Custom animations */
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}

@@ -1,0 +1,74 @@
+/* Custom styles for transactions component */
+.transaction-card {
+    @apply bg-white rounded-xl shadow-sm p-6 transition-all duration-300 hover:shadow-md;
+}
+
+/* Custom scrollbar for modal */
+.modal-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    @apply bg-gray-400 rounded;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-500;
+}
+
+/* Animation for modal */
+.modal-enter {
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+.modal-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.3s ease-out;
+}
+
+/* Type selection buttons */
+.type-btn {
+    @apply border-2 rounded-lg p-4 text-center transition-all duration-200 cursor-pointer;
+}
+
+.type-btn:hover {
+    @apply transform scale-105;
+}
+
+/* Status badges */
+.status-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+}
+
+/* Table row animations */
+.table-row-enter {
+    @apply opacity-0 transform -translate-y-2;
+}
+
+.table-row-enter-active {
+    @apply opacity-100 transform translate-y-0;
+    transition: all 0.3s ease-out;
+}
+
+/* Loading animation */
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .5;
+    }
+}

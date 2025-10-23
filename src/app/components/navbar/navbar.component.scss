@@ -1,0 +1,64 @@
+/* Desktop Navigation Items */
+.nav-item-active {
+  @apply bg-white bg-opacity-20 text-white;
+}
+
+.nav-item-inactive {
+  @apply text-indigo-100 hover:bg-white hover:bg-opacity-10;
+}
+
+/* Mobile Navigation Items */
+.mobile-nav-item-active {
+  @apply bg-white bg-opacity-20 text-white;
+}
+
+.mobile-nav-item-inactive {
+  @apply text-indigo-100 hover:bg-white hover:bg-opacity-10;
+}
+
+/* Dropdown Styles */
+.dropdown-item {
+  @apply transition-colors duration-200;
+}
+
+/* Smooth transitions for mobile menu */
+.mobile-menu-enter {
+  transform: translateY(-10px);
+  opacity: 0;
+}
+
+.mobile-menu-enter-active {
+  transform: translateY(0);
+  opacity: 1;
+  transition: all 0.3s ease-out;
+}
+
+.mobile-menu-exit {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.mobile-menu-exit-active {
+  transform: translateY(-10px);
+  opacity: 0;
+  transition: all 0.3s ease-in;
+}
+
+/* Custom scrollbar for dropdown */
+.dropdown-menu::-webkit-scrollbar {
+  width: 4px;
+}
+
+.dropdown-menu::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded;
+}
+
+/* Focus styles for accessibility */
+button:focus,
+a:focus {
+  @apply outline-none ring-2 ring-white ring-opacity-50;
+}

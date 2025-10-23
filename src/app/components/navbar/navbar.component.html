@@ -1,0 +1,164 @@
+<nav class="bg-gradient-to-r from-indigo-600 to-purple-600 shadow-lg">
+  <div class="mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16">
+      <!-- Left side - Brand and navigation -->
+      <div class="flex items-center">
+        <!-- Brand/Logo -->
+        <a
+          routerLink="/dashboard"
+          class="flex items-center space-x-2 text-white hover:text-indigo-100 transition-colors duration-200"
+        >
+          <div
+            class="w-8 h-8 bg-white bg-opacity-20 rounded-lg flex items-center justify-center"
+          >
+            <i class="fas fa-wallet text-white text-sm"></i>
+          </div>
+          <span class="text-xl font-bold">BudgetTracker</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center space-x-1 ml-8">
+          <a
+            routerLink="/dashboard"
+            class="nav-item px-4 py-2 rounded-lg transition-all duration-200"
+            [class.nav-item-active]="isActiveRoute('/dashboard')"
+            [class.nav-item-inactive]="!isActiveRoute('/dashboard')"
+          >
+            <i class="fas fa-chart-line mr-2"></i>
+            Dashboard
+          </a>
+          <a
+            routerLink="/transactions"
+            class="nav-item px-4 py-2 rounded-lg transition-all duration-200"
+            [class.nav-item-active]="isActiveRoute('/transactions')"
+            [class.nav-item-inactive]="!isActiveRoute('/transactions')"
+          >
+            <i class="fas fa-exchange-alt mr-2"></i>
+            Transactions
+          </a>
+          <a
+            routerLink="/budget"
+            class="nav-item px-4 py-2 rounded-lg transition-all duration-200"
+            [class.nav-item-active]="isActiveRoute('/budget')"
+            [class.nav-item-inactive]="!isActiveRoute('/budget')"
+          >
+            <i class="fas fa-chart-pie mr-2"></i>
+            Budget
+          </a>
+        </div>
+      </div>
+
+      <!-- Right side - User menu -->
+      <div class="flex items-center">
+        <!-- Desktop User Menu -->
+        <div class="hidden md:flex items-center">
+          <button
+            mat-button
+            [matMenuTriggerFor]="profileMenu"
+            class="flex items-center space-x-2 text-white hover:text-indigo-100 transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-white hover:bg-opacity-10"
+          >
+            <div
+              class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center"
+            >
+              <mat-icon>person</mat-icon>
+            </div>
+            <span class="font-medium">
+              {{ (authService.currentUser$ | async)?.username || "User" }}
+            </span>
+            <mat-icon>expand_more</mat-icon>
+          </button>
+
+          <mat-menu #profileMenu="matMenu" class="rounded-lg shadow-lg">
+            <button
+              mat-menu-item
+              (click)="logout()"
+              class="flex items-center space-x-2"
+            >
+              <mat-icon>logout</mat-icon>
+              <span>Sign Out</span>
+            </button>
+          </mat-menu>
+        </div>
+
+        <!-- Mobile menu button -->
+        <div class="md:hidden flex items-center">
+          <button
+            type="button"
+            class="text-white hover:text-indigo-100 focus:outline-none focus:text-indigo-100 p-2"
+            (click)="isMobileMenuOpen = !isMobileMenuOpen"
+          >
+            <i class="fas fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div
+      class="md:hidden border-t border-indigo-500"
+      [class.hidden]="!isMobileMenuOpen"
+    >
+      <div class="px-2 pt-2 pb-3 space-y-1">
+        <a
+          routerLink="/dashboard"
+          class="mobile-nav-item block px-3 py-2 rounded-lg transition-colors duration-200"
+          [class.mobile-nav-item-active]="isActiveRoute('/dashboard')"
+          [class.mobile-nav-item-inactive]="!isActiveRoute('/dashboard')"
+          (click)="isMobileMenuOpen = false"
+        >
+          <i class="fas fa-chart-line mr-3"></i>
+          Dashboard
+        </a>
+        <a
+          routerLink="/transactions"
+          class="mobile-nav-item block px-3 py-2 rounded-lg transition-colors duration-200"
+          [class.mobile-nav-item-active]="isActiveRoute('/transactions')"
+          [class.mobile-nav-item-inactive]="!isActiveRoute('/transactions')"
+          (click)="isMobileMenuOpen = false"
+        >
+          <i class="fas fa-exchange-alt mr-3"></i>
+          Transactions
+        </a>
+        <a
+          routerLink="/budget"
+          class="mobile-nav-item block px-3 py-2 rounded-lg transition-colors duration-200"
+          [class.mobile-nav-item-active]="isActiveRoute('/budget')"
+          [class.mobile-nav-item-inactive]="!isActiveRoute('/budget')"
+          (click)="isMobileMenuOpen = false"
+        >
+          <i class="fas fa-chart-pie mr-3"></i>
+          Budget
+        </a>
+
+        <!-- Mobile user section -->
+        <div class="border-t border-indigo-400 mt-3 pt-3">
+          <div class="px-3 py-2 text-white">
+            <div class="flex items-center space-x-3">
+              <div
+                class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center"
+              >
+                <i class="fas fa-user text-sm"></i>
+              </div>
+              <div>
+                <p class="font-medium">
+                  {{ (authService.currentUser$ | async)?.username || "User" }}
+                </p>
+                <p class="text-sm text-indigo-200">
+                  {{ (authService.currentUser$ | async)?.email || "" }}
+                </p>
+              </div>
+            </div>
+          </div>
+          <a
+            href="#"
+            class="mobile-nav-item block px-3 py-2 rounded-lg transition-colors duration-200 text-red-600 hover:text-red-700"
+            (click)="logout(); $event.preventDefault()"
+          >
+            <i class="fas fa-sign-out-alt mr-3"></i>
+            Sign Out
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
