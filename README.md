@@ -1,27 +1,49 @@
-# Frontend
+# Budget Tracker - Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.3.
+A modern, responsive Angular application for personal finance management and budget tracking.
 
-## Development server
+![Angular](https://img.shields.io/badge/Angular-16.2.3-red)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.1-blue)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🌐 Live Demo
 
-## Code scaffolding
+**Live URL:** [https://your-budget-tracker-app.vercel.app](https://budget-tracker-frontend-rouge.vercel.app/)  
+*Note: Replace with your actual deployed URL*
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 🚀 Quick Start
 
-## Build
+### Prerequisites
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Node.js** (version 16.x or 18.x)
+- **npm** (version 8.x or higher) or **yarn**
+- **Angular CLI** (version 16.2.3)
 
-## Running unit tests
+```bash
+# Verify installation
+node --version
+npm --version
+ng version
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Installation
 
-## Running end-to-end tests
+1. Clone the repository
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```bash
+git clone https://github.com/smitsonani77/budget-tracker-frontend.git
+cd budget-tracker-frontend
+```
 
-## Further help
+2. Install dependencies
+```bash
+npm install
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+3. Start development server
+
+```bash
+ng serve
+# or
+npm start
+```
