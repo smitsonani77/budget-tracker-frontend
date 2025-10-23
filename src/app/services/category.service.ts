@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Category } from '../models/Category.modal';
 import { Observable } from 'rxjs';
-import * as _ from 'lodash';
+import { isEmpty } from 'lodash';
 
 @Injectable({
   providedIn: 'root',
@@ -37,7 +37,7 @@ export class CategoryService {
     console.log(this.categories, categories);
 
     let data = this.categories;
-    if (_.isEmpty(data)) {
+    if (isEmpty(data)) {
       data = categories;
     }
     console.log('data =>', data);
