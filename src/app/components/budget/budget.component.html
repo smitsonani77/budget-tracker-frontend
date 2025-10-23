@@ -13,14 +13,14 @@
       <div class="flex flex-wrap gap-2">
         <button
           *ngIf="!isEditing"
-          class="btn-primary flex items-center"
+          class="btn btn-primary flex items-center"
           (click)="toggleEdit()"
         >
           <i class="fas fa-edit mr-2"></i>Edit Budget
         </button>
         <div *ngIf="isEditing" class="flex gap-2">
           <button
-            class="btn-success flex items-center"
+            class="btn btn-success flex items-center"
             (click)="saveBudget()"
             [disabled]="!budgetForm.valid || isLoading"
           >
@@ -28,7 +28,7 @@
             {{ isLoading ? "Saving..." : "Save Budget" }}
           </button>
           <button
-            class="btn-secondary flex items-center"
+            class="btn btn-secondary flex items-center"
             (click)="cancelEdit()"
           >
             <i class="fas fa-times mr-2"></i>Cancel

@@ -90,7 +90,6 @@ export class TransactionsComponent implements OnInit {
 
   updateFilteredCategories(): void {
     const type = this.transactionForm.get('type')?.value ?? 'expense';
-    console.log('type =>', type);
     this.filteredCategories = this.categoryService.getCategoriesByType(
       type,
       this.categories

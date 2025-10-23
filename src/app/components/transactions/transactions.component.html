@@ -11,7 +11,7 @@
         </p>
       </div>
       <button
-        class="btn-primary flex items-center"
+        class="btn btn-primary flex items-center"
         (click)="showTransactionForm = true"
       >
         <i class="fas fa-plus mr-2"></i>
@@ -77,10 +77,10 @@
 
       <!-- Filter Actions -->
       <div class="flex items-end space-x-2">
-        <button class="btn-secondary flex-1" (click)="clearFilters()">
+        <button class="btn btn-secondary flex-1" (click)="clearFilters()">
           Clear
         </button>
-        <button class="btn-primary flex-1" (click)="applyFilters()">
+        <button class="btn btn-primary flex-1" (click)="applyFilters()">
           Apply
         </button>
       </div>
@@ -276,7 +276,7 @@
                   Get started by adding your first transaction
                 </p>
                 <button
-                  class="btn-primary flex items-center"
+                  class="btn btn-primary flex items-center"
                   (click)="showTransactionForm = true"
                 >
                   <i class="fas fa-plus mr-2"></i>
@@ -491,14 +491,14 @@
           <div class="flex space-x-3 pt-4">
             <button
               type="button"
-              class="btn-secondary flex-1"
+              class="btn btn-secondary flex-1"
               (click)="closeTransactionForm()"
             >
               Cancel
             </button>
             <button
               type="submit"
-              class="btn-primary flex-1"
+              class="btn btn-primary flex-1"
               [disabled]="transactionForm.invalid || isLoading"
             >
               <i *ngIf="isLoading" class="fas fa-spinner fa-spin mr-2"></i>

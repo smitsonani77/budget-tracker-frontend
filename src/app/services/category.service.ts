@@ -33,15 +33,10 @@ export class CategoryService {
    * Get categories by type
    */
   getCategoriesByType(type: 'income' | 'expense', categories?: any): string[] {
-    console.log('categories =>', categories);
-
-    console.log(this.categories, categories);
-
     let data = this.categories;
     if (isEmpty(data)) {
       data = categories;
     }
-    console.log('data =>', data);
 
     return data
       .filter((cat: any) => cat.type === type)
