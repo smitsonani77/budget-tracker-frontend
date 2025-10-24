@@ -53,5 +53,5 @@ npm start
 Use these demo accounts to test the application:
 ```
 username: test	
-password: test@t123
+password: test@123
 ```
